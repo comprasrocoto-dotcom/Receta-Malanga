@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetario Malanga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">Malanga</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="pages/familias.html" class="nav-link">Familias</a>
+        <a href="pages/buscar.html" class="nav-link">Buscar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Restaurante</p>
+      <h1 class="hero-title">Recetario<br/><em>Malanga</em></h1>
+      <p class="hero-subtitle">306 recetas · 37 familias · Gastronomía caribeña y de autor</p>
+      <a href="pages/familias.html" class="btn-primary">Explorar recetas</a>
+    </div>
+    <div class="hero-stat-bar">
+      <div class="stat"><span class="stat-num" id="stat-total">306</span><span class="stat-label">Recetas</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">37</span><span class="stat-label">Familias</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">🌊</span><span class="stat-label">Mar & Tierra</span></div>
+    </div>
+  </section>
+
+  <!-- CATEGORY GRID -->
+  <section class="categories-section">
+    <div class="section-header">
+      <h2>Familias del menú</h2>
+      <p>Explora por categoría</p>
+    </div>
+    <div class="category-grid" id="category-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- FEATURED SECTION -->
+  <section class="featured-section">
+    <div class="section-header">
+      <h2>Destacados del chef</h2>
+      <p>Platos insignia de Malanga</p>
+    </div>
+    <div class="featured-grid" id="featured-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">Malanga</span>
+      <span class="footer-copy">Recetario interno · Uso exclusivo del equipo</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
