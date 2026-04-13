@@ -1057,7 +1057,6 @@
 
     <div class="header-actions">
       <button class="btn btn-ghost" onclick="showGitHubInfo()">📂 GitHub</button>
-      <button class="btn btn-primary" onclick="openAddModal()">+ Nueva Receta</button>
     </div>
   </div>
 </header>
@@ -1174,42 +1173,6 @@ malanga-recetario/
       </div>
     </div>
   </main>
-</div>
-
-<!-- MODAL: Add Recipe -->
-<div class="modal-overlay" id="addModal">
-  <div class="modal">
-    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
-      <h2 class="modal-title" style="margin-bottom:0;">Nueva Receta</h2>
-      <button onclick="closeModal('addModal')" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);">×</button>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Nombre del Plato *</label>
-      <input type="text" class="form-input" id="newName" placeholder="Ej: CEVICHE ESPECIAL">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Categoría *</label>
-      <select class="form-input" id="newCategory">
-        <option value="">Selecciona categoría…</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Descripción (carta)</label>
-      <textarea class="form-input notes-textarea" id="newDesc" placeholder="Descripción que aparece en la carta…" style="min-height:70px;"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Ingredientes (uno por línea: nombre | und | cantidad)</label>
-      <textarea class="form-input notes-textarea" id="newIngredients" placeholder="CAMARONES | g | 200&#10;LIMON | g | 30&#10;SAL | g | 5"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Pasos de Preparación (uno por línea)</label>
-      <textarea class="form-input notes-textarea" id="newSteps" placeholder="1. Marinar los camarones…&#10;2. Mezclar con el limón…"></textarea>
-    </div>
-    <div class="form-actions">
-      <button class="btn btn-outline" onclick="closeModal('addModal')">Cancelar</button>
-      <button class="btn btn-primary" onclick="saveNewRecipe()">Guardar Receta</button>
-    </div>
-  </div>
 </div>
 
 <!-- MODAL: Photo Upload -->
@@ -1547,51 +1510,9 @@ function savePhoto() {
 }
 
 // ─── ADD RECIPE ───────────────────────────────────────────────────────────────
-function openAddModal() {
-  document.getElementById('newName').value = '';
-  document.getElementById('newCategory').value = '';
-  document.getElementById('newDesc').value = '';
-  document.getElementById('newIngredients').value = '';
-  document.getElementById('newSteps').value = '';
-  document.getElementById('addModal').classList.add('open');
-}
 
-function saveNewRecipe() {
-  const nombre = document.getElementById('newName').value.trim().toUpperCase();
-  const cat = document.getElementById('newCategory').value;
-  if (!nombre || !cat) { toast('⚠️ Nombre y categoría son obligatorios'); return; }
 
-  const ingredientsRaw = document.getElementById('newIngredients').value.trim();
-  const stepsRaw = document.getElementById('newSteps').value.trim();
 
-  const ingredientes = ingredientsRaw ? ingredientsRaw.split('\n').filter(Boolean).map(line => {
-    const parts = line.split('|').map(p => p.trim());
-    return { nombre: parts[0] || '', unidad: parts[1] || '', cantidad: parseFloat(parts[2]) || null, total: null };
-  }) : [];
-
-  const preparacion = stepsRaw ? stepsRaw.split('\n').filter(Boolean).map(s => s.replace(/^\d+\.\s*/, '')) : [];
-
-  const recipe = {
-    nombre,
-    categoria: cat,
-    categoria_display: cat,
-    descripcion: document.getElementById('newDesc').value.trim(),
-    costo: null,
-    precio_venta: null,
-    ingredientes,
-    preparacion,
-    _custom: true,
-  };
-
-  customRecipes.push(recipe);
-  localStorage.setItem('malanga_custom', JSON.stringify(customRecipes));
-  allRecipes = [...recipes, ...customRecipes];
-  renderGrid();
-  updateBadges();
-  closeModal('addModal');
-  toast('✅ Receta agregada exitosamente');
-  showDetail(nombre);
-}
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
 function showPage(id) {
