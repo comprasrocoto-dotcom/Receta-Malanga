@@ -1,91 +1,46 @@
-# 🦐 Recetario Malanga
+# 🌿 Malanga · Recetario Digital
 
-Recetario web interno del restaurante **Malanga** — 306 recetas organizadas por familias, listo para GitHub Pages.
+Recetario web para las cocinas y bares de Malanga. Acceso desde cualquier dispositivo.
 
-## 📂 Estructura
+## 🚀 Publicar en GitHub Pages
 
-```
-recetario-malanga/
-├── index.html          # Página principal
-├── css/
-│   └── style.css       # Estilos completos
-├── js/
-│   ├── app.js          # Lógica central y configuración
-│   └── index.js        # JS de la página principal
-├── data/
-│   └── recipes.json    # Base de datos de recetas (306 recetas)
-└── pages/
-    ├── familias.html   # Lista de todas las familias
-    ├── familia.html    # Recetas de una familia
-    ├── receta.html     # Detalle de una receta
-    └── buscar.html     # Búsqueda global
-```
-
-## 🚀 Despliegue en GitHub Pages
-
-1. **Sube los archivos** a un repositorio de GitHub
+1. Sube este repositorio a GitHub
 2. Ve a **Settings → Pages**
-3. En "Source" selecciona la rama `main` y carpeta `/ (root)`
-4. Guarda y espera unos minutos — el sitio estará disponible en `https://tuusuario.github.io/recetario-malanga`
+3. Selecciona la rama `main` y carpeta raíz `/`
+4. Tu recetario estará disponible en: `https://TU-USUARIO.github.io/malanga-recetario`
 
-## 📋 Familias incluidas
+## 📁 Estructura
 
-### 🍽️ Cocina (14 familias)
-- Entradas (17 recetas)
-- Los Arrebatos del Chef (5 recetas)
-- Fuertes Mar (14 recetas)
-- Fuertes Tierra (8 recetas)
-- Fuertes Mar y Tierra (6 recetas)
-- Arroces (7 recetas)
-- Langostinos (3 recetas)
-- Ceviches (5 recetas)
-- Ensaladas (2 recetas)
-- Postres (18 recetas)
-- Brunch
-- Menú Infantil (3 recetas)
-- Evento (3 recetas)
+```
+malanga-recetario/
+├── index.html           ← App principal (todo en uno)
+├── recipes_data.json    ← Base de datos de recetas (300+ platos)
+└── README.md
+```
 
-### 🍹 Cocteles & Bebidas (11 familias)
-- Cocteles Malanga (17 recetas)
-- Cocteles Tradicionales (27 recetas)
-- Mocktails (4 recetas)
-- Sangrias (11 recetas)
-- Sodas (5 recetas)
-- Jugos Naturales (5 recetas)
-- Aromáticas (3 recetas)
-- Bebidas (9 recetas)
-- Mezcladores (5 recetas)
-- Refajo (1 receta)
+## 📸 Agregar fotos
 
-### 🥃 Licores & Spirits
-- Aguardiente, Tequila, Mezcal, Ginebra, Vodka, Ron, Whisky, Maltas, Cervezas
+Desde la app: abre la receta → **Agregar Foto** → sube la imagen.
 
-### 🍷 Vinos & Espumosos
-- Vino Tinto, Vino Blanco, Vino Rosado, Champañas y Espumosos
-
-## ✨ Características
-- Búsqueda en tiempo real por nombre, familia e ingrediente
-- Navegación entre recetas (anterior / siguiente)
-- Precio carta y costo de receta por plato
-- Cálculo de margen de rentabilidad
-- Diseño responsivo (desktop y móvil)
-- Sin dependencias externas (solo Google Fonts)
-- Funciona como sitio estático en GitHub Pages
-
-## 🛠️ Desarrollo local
-
-No necesitas servidor — simplemente abre `index.html` en tu navegador. Para un entorno de desarrollo más completo:
+Las fotos se guardan localmente en el dispositivo. Para hacerlas permanentes en GitHub:
 
 ```bash
-# Con Python
-python3 -m http.server 8080
-
-# Con Node
-npx serve .
+# Crea la carpeta photos/ y sube las imágenes con el nombre del plato
+photos/bocados-del-oriente.jpg
+photos/pesca-malanga.jpg
 ```
 
-Luego visita `http://localhost:8080`.
+## ✨ Funcionalidades
 
----
+- ✅ 300+ recetas importadas de la matriz de costos
+- ✅ Análisis de costos y márgenes por plato
+- ✅ Paso a paso de preparación
+- ✅ Búsqueda por nombre o ingrediente
+- ✅ Filtro por categoría (cocina, cócteles, licores)
+- ✅ Fotos por receta (guardadas en el dispositivo)
+- ✅ Notas de cocina editables
+- ✅ Agregar nuevas recetas
+- ✅ Vista de cuadrícula o lista
+- ✅ Impresión de recetas
+- ✅ 100% offline (sin servidor)
 
-*Uso exclusivo del equipo de Malanga Restaurante*
